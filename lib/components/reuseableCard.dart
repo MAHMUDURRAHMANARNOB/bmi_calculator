@@ -18,6 +18,7 @@ class ReusableCard extends StatelessWidget {
     return GestureDetector(
       onTap: onCardClick,
       child: Container(
+        width: double.infinity,
         /*color: Color(0xFF29363C),*/ //NOTE: We can not use color in container where we use Box decoration
         margin: const EdgeInsets.all(15.0),
         decoration: BoxDecoration(

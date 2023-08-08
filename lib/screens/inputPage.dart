@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:bmi_calculator/components/bottomButton.dart';
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/round_button.dart';
+import 'package:bmi_calculator/screens/resultPage.dart';
+import 'package:bmi_calculator/components/round_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'reuseableCard.dart';
-import 'iconWidget.dart';
-import 'package:flutter/cupertino.dart';
+import '../calculateBmi.dart';
+import '../components/reuseableCard.dart';
+import '../components/iconWidget.dart';
 import 'package:flutter/material.dart';
 
 enum Gender { male, female, none }
@@ -237,10 +239,26 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: kBottomContainerHeight,
-              color: kBottomContainerColor,
+            BottomButton(
+              buttonTitle: "Calculate Your BMI",
+              onClicked: () {
+                CalculateBMI bmi = CalculateBMI(
+                  age: age,
+                  height: height,
+                  weight: weight,
+                );
+                print(bmi.calculateBmi());
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(
+                      BMI: bmi.calculateBmi(),
+                      Result: bmi.getResult(),
+                      Suggestion: bmi.getSuggestion(),
+                    ),
+                  ),
+                );
+              },
             )
           ],
         ));
