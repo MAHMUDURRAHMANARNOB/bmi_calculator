@@ -4,7 +4,7 @@ const kActiveCardColor = Color(0x43576979);
 const kActiveSliderColor = Colors.white;
 const kInactiveCardColor = Color(0x11576979);
 const kInactiveSliderColor = Colors.white60;
-const kBottomContainerColor = Color(0xFFEB1555);
+const kBottomContainerColor = Color(0xFFE5A028);
 const kBottomContainerHeight = 80.0;
 
 const kLabelTextStyle = TextStyle(

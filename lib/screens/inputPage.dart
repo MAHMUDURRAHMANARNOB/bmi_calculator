@@ -125,12 +125,13 @@ class _InputPageState extends State<InputPage> {
                           data: SliderTheme.of(context).copyWith(
                             activeTrackColor: kActiveSliderColor,
                             inactiveTickMarkColor: kInactiveCardColor,
-                            thumbColor: Color(0xFFEB1555),
+                            thumbColor: kBottomContainerColor,
                             thumbShape:
                                 RoundSliderThumbShape(enabledThumbRadius: 10.0),
                             overlayShape:
                                 RoundSliderOverlayShape(overlayRadius: 20),
-                            overlayColor: Color(0xFFEB1555).withOpacity(0.2),
+                            overlayColor:
+                                kBottomContainerColor.withOpacity(0.2),
                           ),
                           child: Slider(
                             value: height.toDouble(),
@@ -141,7 +142,7 @@ class _InputPageState extends State<InputPage> {
                                 /*height = newValue.toInt();*/
                                 height = newValue.round();
                               });
-                              print(height.toString());
+                              /*print(height.toString());*/
                             },
                           ),
                         ),
@@ -247,7 +248,7 @@ class _InputPageState extends State<InputPage> {
                   height: height,
                   weight: weight,
                 );
-                print(bmi.calculateBmi());
+                /*print(bmi.calculateBmi());*/
                 Navigator.push(
                   context,
                   MaterialPageRoute(
