@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/round_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'reuseableCard.dart';
@@ -21,6 +22,8 @@ class _InputPageState extends State<InputPage> {
   /*Color selectedColor = inactiveCardColor;*/
   Gender selectedGender = Gender.none;
   int height = 180;
+  int weight = 78;
+  int age = 20;
   /*Color maleCardColor = inactiveCardColor;
   Color femaleCardColor = inactiveCardColor;*/
 
@@ -147,20 +150,93 @@ class _InputPageState extends State<InputPage> {
               ],
             )),
             Expanded(
-                child: Row(
-              children: [
-                Expanded(
-                  child: ReusableCard(
-                    colour: kActiveCardColor,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ReusableCard(
+                      colour: kActiveCardColor,
+                      cardClild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "WEIGHT",
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            '$weight',
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              RoundButton(
+                                  icon: FontAwesomeIcons.minus,
+                                  onPressed: () {
+                                    setState(() {
+                                      weight -= 1;
+                                    });
+                                  }),
+                              /*SizedBox(
+                                height: 10,
+                                width: 10,
+                              ),*/
+                              RoundButton(
+                                  icon: FontAwesomeIcons.plus,
+                                  onPressed: () {
+                                    setState(() {
+                                      weight += 1;
+                                    });
+                                  }),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: ReusableCard(
-                    colour: kActiveCardColor,
+                  Expanded(
+                    child: ReusableCard(
+                      colour: kActiveCardColor,
+                      cardClild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "AGE",
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            '$age',
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              RoundButton(
+                                  icon: FontAwesomeIcons.minus,
+                                  onPressed: () {
+                                    setState(() {
+                                      age -= 1;
+                                    });
+                                  }),
+                              /*SizedBox(
+                                height: 10,
+                                width: 10,
+                              ),*/
+                              RoundButton(
+                                  icon: FontAwesomeIcons.plus,
+                                  onPressed: () {
+                                    setState(() {
+                                      age += 1;
+                                    });
+                                  }),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-              ],
-            )),
+                ],
+              ),
+            ),
             Container(
               width: double.infinity,
               height: kBottomContainerHeight,
