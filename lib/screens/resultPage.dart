@@ -6,12 +6,15 @@ import 'package:flutter/material.dart';
 class ResultPage extends StatelessWidget {
   final String BMI;
   final String Result;
+  final String Range;
   final String Suggestion;
-  const ResultPage(
-      {super.key,
-      required this.BMI,
-      required this.Result,
-      required this.Suggestion});
+  const ResultPage({
+    super.key,
+    required this.BMI,
+    required this.Result,
+    required this.Suggestion,
+    required this.Range,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +49,11 @@ class ResultPage extends StatelessWidget {
                   Text(
                     BMI,
                     style: kBMITextStyle,
+                  ),
+                  Text(
+                    '$Result BMI Range: \n$Range',
+                    textAlign: TextAlign.center,
+                    style: kBodyTextStyle,
                   ),
                   Text(
                     Suggestion,

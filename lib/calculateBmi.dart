@@ -33,6 +33,20 @@ class CalculateBMI {
     }
   }
 
+  String getRange() {
+    if (_bmi > 24.9) {
+      return '24.9 - 29 kg/m2';
+    } else if (_bmi <= 18.4) {
+      return '0 - 18.4 kg/m2';
+    } else if (_bmi >= 18.5 && _bmi <= 24.9) {
+      return '18.5 - 24.9 kg/m2';
+    } else if (_bmi > 29) {
+      return 'Above 29 kg/m2';
+    } else {
+      return "ERROR";
+    }
+  }
+
   String getSuggestion() {
     if (_bmi > 24.9 && _bmi < 29) {
       return 'You are Over-Weight. Do some exercise and maintain a healthy diet.';

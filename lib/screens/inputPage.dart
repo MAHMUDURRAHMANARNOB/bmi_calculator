@@ -255,6 +255,7 @@ class _InputPageState extends State<InputPage> {
                       BMI: bmi.calculateBmi(),
                       Result: bmi.getResult(),
                       Suggestion: bmi.getSuggestion(),
+                      Range: bmi.getRange(),
                     ),
                   ),
                 );
